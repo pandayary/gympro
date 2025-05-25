@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - My Fitness Gym</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/forms.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <img src="img/logom.png" alt="">
+            <div>MY FITNESS</div>
+        </div>
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="supplements.html">Supplements</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="book-season.html">Book Season</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <button class="btn payment-btn" onclick="window.location.href='payment.html'">
+                <i class="fas fa-credit-card"></i> Payment
+            </button>
+            <button class="btn" onclick="window.location.href='contact.html'">
+                <i class="fas fa-envelope"></i> Contact Us
+            </button>
+            <button class="btn" onclick="window.location.href='about.html'">
+                <i class="fas fa-info-circle"></i> About Us
+            </button>
+        </div>
+    </header>
+
+    <div class="cart-container">
+        <h2>Shopping Cart</h2>
+        <div class="cart-content">
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-summary">
+                <h3>Order Summary</h3>
+                <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">₹0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span>Shipping:</span>
+                    <span id="shipping">₹0.00</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total:</span>
+                    <span id="total">₹0.00</span>
+                </div>
+                <button class="btn checkout-btn" onclick="proceedToCheckout()">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Select Payment Method</h3>
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <input type="radio" id="card" name="payment" value="card" checked>
+                    <label for="card">
+                        <i class="fas fa-credit-card"></i>
+                        Credit/Debit Card
+                    </label>
+                </div>
+                <div class="payment-method">
+                    <input type="radio" id="upi" name="payment" value="upi">
+                    <label for="upi">
+                        <i class="fas fa-mobile-alt"></i>
+                        UPI
+                    </label>
+                </div>
+                <div class="payment-method">
+                    <input type="radio" id="netbanking" name="payment" value="netbanking">
+                    <label for="netbanking">
+                        <i class="fas fa-university"></i>
+                        Net Banking
+                    </label>
+                </div>
+            </div>
+            <div id="card-details" class="payment-details">
+                <div class="form-group">
+                    <input type="text" id="card-name" placeholder="Name on Card" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="card-number" placeholder="Card Number" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="expiry" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="cvv" placeholder="CVV" required>
+                    </div>
+                </div>
+            </div>
+            <div id="upi-details" class="payment-details" style="display: none;">
+                <div class="form-group">
+                    <input type="text" id="upi-id" placeholder="Enter UPI ID" required>
+                </div>
+            </div>
+            <div id="netbanking-details" class="payment-details" style="display: none;">
+                <div class="form-group">
+                    <select id="bank" required>
+                        <option value="">Select Bank</option>
+                        <option value="sbi">State Bank of India</option>
+                        <option value="hdfc">HDFC Bank</option>
+                        <option value="icici">ICICI Bank</option>
+                        <option value="axis">Axis Bank</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn" onclick="closeModal()">Cancel</button>
+                <button class="btn payment-btn" onclick="processPayment()">Pay Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

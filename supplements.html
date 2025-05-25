@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplements - My Fitness Gym</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/forms.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <img src="img/logom.png" alt="">
+            <div>MY FITNESS</div>
+        </div>
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="supplements.html" class="active">Supplements</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <button class="btn payment-btn" onclick="window.location.href='payment.html'">
+                <i class="fas fa-credit-card"></i> Payment
+            </button>
+            <button class="btn" onclick="window.location.href='contact.html'">
+                <i class="fas fa-envelope"></i> Contact Us
+            </button>
+            
+        </div>
+    </header>
+
+    <div class="supplements-container">
+        <h2>Our Supplements</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="img/whey-protein.jpg" alt="Whey Protein">
+                <h3>Whey Protein</h3>
+                <p>High-quality protein powder for muscle growth</p>
+                <p class="price">₹2,499</p>
+                <button class="btn" onclick="addToCart({
+                    id: 'whey1',
+                    name: 'Whey Protein',
+                    price: 2499,
+                    image: 'img/protien.jpg'
+                })">Add to Cart</button>
+            </div>
+
+            <div class="product-item">
+                <img src="img/bcaa.jpg" alt="BCAA">
+                <h3>BCAA</h3>
+                <p>Essential amino acids for recovery</p>
+                <p class="price">₹1,999</p>
+                <button class="btn" onclick="addToCart({
+                    id: 'bcaa1',
+                    name: 'BCAA',
+                    price: 1999,
+                    image: 'img/suppliments.jpg'
+                })">Add to Cart</button>
+            </div>
+
+            <div class="product-item">
+                <img src="img/creatine.jpg" alt="Creatine">
+                <h3>Creatine</h3>
+                <p>Pure creatine monohydrate</p>
+                <p class="price">₹1,499</p>
+                <button class="btn" onclick="addToCart({
+                    id: 'creatine1',
+                    name: 'Creatine',
+                    price: 1499,
+                    image: 'img/protien.jpg'
+                })">Add to Cart</button>
+            </div>
+
+            <div class="product-item">
+                <img src="img/pre-workout.jpg" alt="Pre-Workout">
+                <h3>Pre-Workout</h3>
+                <p>Energy and focus booster</p>
+                <p class="price">₹2,999</p>
+                <button class="btn" onclick="addToCart({
+                    id: 'pre1',
+                    name: 'Pre-Workout',
+                    price: 2999,
+                    image: 'img/suppliments.jpg'
+                })">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="img/mass-gainer.jpg" alt="mass-gainer">
+                <h3>weight gainer</h3>
+                <p>for gainng weight</p>
+                <p class="price">₹2,999</p>
+                <button class="btn" onclick="addToCart({
+                    id: 'pre1',
+                    name: 'weight gainer',
+                    price: 2999,
+                    image: 'img/suppliments.jpg'
+                })">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="img/protine-isolate.jpg" alt="protein-isolate">
+                <h3>Pure Isolate</h3>
+                <p>for muscles repair</p>
+                <p class="price">₹2,999</p>
+                <button class="btn" onclick="addToCart({
+                    id: 'pre1',
+                    name: 'Isolated Protein',
+                    price: 4999,
+                    image: 'img/suppliments.jpg'
+                })">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="img/gluatamine.jpg" alt="Glutamine">
+                <h3>Glutamine </h3>
+                <p>Removing excess ammonia</p>
+                <p class="price">₹999</p>
+                <button class="btn" onclick="addToCart({
+                    id: 'pre1',
+                    name: 'Glutamine',
+                    price: 799,
+                    image: 'img/suppliments.jpg'
+                })">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="img/multivitamin.jpg" alt="Multivitamin">
+                <h3>Mega Men</h3>
+                <p>Fill in nutritional gaps</p>
+                <p class="price">₹799</p>
+                <button class="btn" onclick="addToCart({
+                    id: 'pre1',
+                    name:'Men Multivitamin',
+                    price: 799,
+                    image: 'img/suppliments.jpg'
+                })">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="img/womens-vitamin.jpg" alt="Women Vitamin">
+                <h3>women vitamin</h3>
+                <p>health and wellness nutraceutical</p>
+                <p class="price">₹699</p>
+                <button class="btn" onclick="addToCart({
+                    id: 'pre1',
+                    name: 'Women vitamin',
+                    price: 699,
+                    image: 'img/suppliments.jpg'
+                })">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="img/cla.jpg" alt="Calcium">
+                <h3>Calcium</h3>
+                <p>Build and maintain strong bones</p>
+                <p class="price">₹599</p>
+                <button class="btn" onclick="addToCart({
+                    id: 'pre1',
+                    name: 'Calcium',
+                    price: 599,
+                    image: 'img/suppliments.jpg'
+                })">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="img/fish.jpg" alt="Fish oil">
+                <h3>Fish oil</h3>
+                <p>reduce pain, improve morning stiffness and relieve joint tenderness in people with rheumatoid arthritis</p>
+                <p class="price">₹899</p>
+                <button class="btn" onclick="addToCart({
+                    id: 'pre1',
+                    name: 'Fish oil',
+                    price: 899,
+                    image: 'img/suppliments.jpg'
+                })">Add to Cart</button>
+            </div>
+             <div class="product-item">
+                <img src="img/l-cr.jpg" alt="L-Carnitine">
+                <h3>L-Carnitine</h3>
+                <p>reduce body fat</p>
+                <p class="price">₹1299</p>
+                <button class="btn" onclick="addToCart({
+                    id: 'pre1',
+                    name: 'L-Carnitine',
+                    price: 1299,
+                    image: 'img/suppliments.jpg'
+                })">Add to Cart</button>
+            </div>
+             <div class="product-item">
+                <img src="img/shaker.jpg" alt="Shaker">
+                <h3>Shaker</h3>
+                <p>mix your suppliments</p>
+                <p class="price">₹649</p>
+                <button class="btn" onclick="addToCart({
+                    id: 'pre1',
+                    name: 'Shaker',
+                    price: 649,
+                    image: 'img/suppliments.jpg'
+                })">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="cart-button">
+            <button class="btn" onclick="window.location.href='cart.html'">
+                <i class="fas fa-shopping-cart"></i> View Cart
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

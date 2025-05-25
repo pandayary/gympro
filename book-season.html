@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Training Season - My Fitness Gym</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/forms.js" defer></script>
+    <script src="js/booking.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <img src="img/logom.png" alt="">
+            <div>MY FITNESS</div>
+        </div>
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="supplements.html">Supplements</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <button class="btn payment-btn" onclick="window.location.href='payment.html'">
+                <i class="fas fa-credit-card"></i> Payment
+            </button>
+            <button class="btn" onclick="window.location.href='contact.html'">
+                <i class="fas fa-envelope"></i> Contact Us
+            </button>
+            <button class="btn" onclick="window.location.href='about.html'">
+                <i class="fas fa-info-circle"></i> About Us
+            </button>
+        </div>
+    </header>
+
+    <div class="booking-container">
+        <h2>Book Training Season</h2>
+
+        <div class="seasons-list" id="seasonsList">
+            <!-- Seasons will be loaded here dynamically -->
+        </div>
+
+        <div id="bookingModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3>Confirm Booking</h3>
+                <div id="bookingDetails"></div>
+                <div class="form-group">
+                    <label for="userId">User ID:</label>
+                    <input type="text" id="userId" required>
+                </div>
+                <div class="modal-buttons">
+                    <button class="btn" onclick="closeBookingModal()">Cancel</button>
+                    <button class="btn payment-btn" onclick="confirmBooking()">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .booking-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .seasons-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .season-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .season-card h3 {
+            margin: 0 0 1rem 0;
+            color: #333;
+        }
+        
+        .season-info {
+            margin-bottom: 1rem;
+        }
+        
+        .season-info p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+        
+        .season-info strong {
+            color: #333;
+        }
+        
+        .book-btn {
+            width: 100%;
+            padding: 0.8rem;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .book-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+        }
+        
+        .form-group {
+            margin: 1rem 0;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+    </style>
+</body>
+
+</html>

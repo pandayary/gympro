@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My fitness gym</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/forms.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header ">
+        <div class="left ">
+            <img src="img/logom.png" alt="">
+            <div>MY FITNESS </div>
+        </div>
+        <div class="mid ">
+            <ul class="navbar ">
+                <li>
+                    <a href="index.html" class="active ">Home</a>
+                </li>
+                <li>
+                    <a href="equipment.html">Equipment</a>
+                </li>
+                <li>
+                    <a href="supplements.html">Supplements</a>
+                </li>
+                <li>
+                    <a href="trainers.html">Trainers</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <button class="btn payment-btn" onclick="window.location.href='payment.html'">
+                <i class="fas fa-credit-card"></i> Payment
+            </button>
+            <button class="btn" onclick="window.location.href='contact.html'">
+                <i class="fas fa-envelope"></i> Contact Us
+            </button>
+           
+        </div>
+
+    </header>
+    <div class="container">
+        <h2>My Fitness form</h2>
+        <form id="membership-form">
+            <div class="form-group">
+                <input type="text" id="member-name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="member-contact" name="contact" placeholder="Contact" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="member-aadhaar" name="aadhaar" placeholder="Aadhaar no" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="member-address" name="address" placeholder="Address" required>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+    <div class="categories">
+        <h2>Our Categories</h2>
+        <div class="category-grid">
+            <div class="category-item">
+                <img src="img/strength.jpg" alt="Strength Training">
+                <h3>Strength Training</h3>
+                <p>Build muscle and increase power</p>
+            </div>
+            <div class="category-item">
+                <img src="img/cardio.jpg" alt="Cardio">
+                <h3>Cardio</h3>
+                <p>Improve heart health and endurance</p>
+            </div>
+            <div class="category-item">
+                <img src="img/yoga.jpg" alt="Yoga">
+                <h3>Yoga</h3>
+                <p>Flexibility and mental wellness</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="img/protien.jpg" alt="Protein Powder">
+                <h3>Premium Protein</h3>
+                <p>High-quality protein powder</p>
+                <button class="btn">Learn More</button>
+            </div>
+            <div class="product-item">
+                <img src="img/suppliments.jpg" alt="Supplements">
+                <h3>Fitness Supplements</h3>
+                <p>Essential workout supplements</p>
+                <button class="btn">Learn More</button>
+            </div>
+            <div class="product-item">
+                <img src="img/eq.jpg" alt="Equipment">
+                <h3>Home Equipment</h3>
+                <p>Professional gym equipment</p>
+                <button class="btn">Learn More</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

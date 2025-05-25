@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - My Fitness Gym</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/forms.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <img src="img/logom.png" alt="">
+            <div>MY FITNESS</div>
+        </div>
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="supplements.html">Supplements</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <button class="btn payment-btn active">
+                <i class="fas fa-credit-card"></i> Payment
+            </button>
+            <button class="btn">more about</button>
+        </div>
+    </header>
+
+    <div class="payment-container">
+        <h2>Payment Options</h2>
+        <div class="payment-grid">
+            <div class="payment-option">
+                <h3>Monthly Membership</h3>
+                <p class="price">₹999/month</p>
+                <ul class="features">
+                    <li>Access to all equipment</li>
+                    <li>Basic training sessions</li>
+                    <li>Locker facility</li>
+                </ul>
+                <button class="btn payment-select" data-plan="monthly">Select Plan</button>
+            </div>
+
+            <div class="payment-option">
+                <h3>Quarterly Membership</h3>
+                <p class="price">₹2,499/3 months</p>
+                <ul class="features">
+                    <li>Access to all equipment</li>
+                    <li>Personal training sessions</li>
+                    <li>Locker facility</li>
+                    <li>Free protein shake</li>
+                </ul>
+                <button class="btn payment-select" data-plan="quarterly">Select Plan</button>
+            </div>
+
+            <div class="payment-option">
+                <h3>Annual Membership</h3>
+                <p class="price">₹8,999/year</p>
+                <ul class="features">
+                    <li>Access to all equipment</li>
+                    <li>Unlimited personal training</li>
+                    <li>Locker facility</li>
+                    <li>Free supplements</li>
+                    <li>Free gym bag</li>
+                </ul>
+                <button class="btn payment-select" data-plan="annual">Select Plan</button>
+            </div>
+        </div>
+
+        <div id="payment-form" class="payment-form" style="display: none;">
+            <h3>Complete Your Payment</h3>
+            <form id="payment-details-form">
+                <div class="form-group">
+                    <input type="text" id="card-name" placeholder="Name on Card" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="card-number" placeholder="Card Number" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="expiry" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="cvv" placeholder="CVV" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="payment-email" placeholder="Email for receipt" required>
+                </div>
+                <button type="submit" class="btn">Pay Now</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

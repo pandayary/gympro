@@ -1,0 +1,1064 @@
+body {
+    font-family: "Audiowide", sans-serif;
+    color: burlywood;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(28, 26, 2);
+    background-position: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.left {
+    display: inline-block;
+    position: absolute;
+    left: 34px;
+    top: 18px;
+}
+
+.left img {
+    width: 111px;
+    filter: invert(100%);
+}
+
+.left div {
+    font-family: "Audiowide", sans-serif;
+    line-height: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.mid {
+    font-family: "Audiowide", sans-serif;
+    color: rgb(65, 32, 32);
+    display: block;
+    width: 33%;
+    margin: 18px auto;
+}
+
+.right {
+    position: absolute;
+    right: 34px;
+    top: 18px;
+}
+
+.navbar {
+    display: inline-block;
+    font-size: 12px;
+}
+
+.navbar li {
+    display: inline-block;
+    color: burlywood;
+}
+
+.navbar li a {
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 3px 20px;
+}
+
+.navbar li a:hover,
+.navbar li a.active {
+    color: rgb(213, 248, 109);
+    text-decoration: underline;
+}
+
+.btn {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    background-color: transparent;
+    padding: 4px 14px;
+    border-radius: 14px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: palegoldenrod;
+}
+
+.form-group input {
+    font-family: "Audiowide", sans-serif;
+    font-size: 22px;
+    text-align: center;
+    display: block;
+    width: 508px;
+    padding: 2px;
+    margin: 3px auto;
+    border: 2px solid rgb(116, 116, 230);
+    border-radius: 9px;
+}
+
+.container {
+    margin: 102px 80px;
+    padding: 75px;
+    width: 33%;
+    border-radius: 28px;
+}
+
+.container h2 {
+    font-family: "Audiowide", sans-serif;
+    text-align: left;
+    margin: 1o5px auto;
+}
+
+.container button {
+    font-family: "Audiowide", sans-serif;
+    display: block;
+    width: 102%;
+    margin: 10px auto;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+
+/* Categories Section */
+
+.categories {
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.categories h2 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    margin-bottom: 30px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+}
+
+.category-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.category-item h3 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    margin: 10px 0;
+}
+
+.category-item p {
+    color: burlywood;
+    font-size: 14px;
+}
+
+
+/* Products Section */
+
+.products {
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.products h2 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-item h3 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    margin: 10px 0;
+}
+
+.product-item p {
+    color: burlywood;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.product-item .btn {
+    margin-top: 10px;
+}
+
+
+/* Supplements Page Styles */
+
+.supplements-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.supplements-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.product-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.product-item h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.product-item p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.product-item .price {
+    color: #e63946;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.cart-button {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.cart-button .btn {
+    background-color: #e63946;
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cart-button .btn:hover {
+    background-color: #c1121f;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    .product-item img {
+        height: 150px;
+    }
+}
+
+
+/* Equipment Page Styles */
+
+.equipment-container {
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.equipment-container h2 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.category-section {
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+}
+
+.category-section h3 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    margin: 20px 0;
+    font-size: 1.8em;
+}
+
+.equipment-details {
+    color: rgb(213, 248, 109);
+    font-size: 14px;
+    margin: 10px 0;
+    line-height: 1.4;
+}
+
+.product-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.product-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-item h3 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    margin: 10px 0;
+    font-size: 1.4em;
+}
+
+.product-item p {
+    color: burlywood;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+
+/* Responsive Design for Equipment Page */
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .equipment-container h2 {
+        font-size: 2em;
+    }
+    .category-section h3 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .equipment-container h2 {
+        font-size: 1.8em;
+    }
+    .category-section h3 {
+        font-size: 1.3em;
+    }
+}
+
+
+/* Trainers Page Styles */
+
+.trainers-container {
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.trainers-container h2 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    margin-bottom: 30px;
+}
+
+.trainer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trainer-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.trainer-item:hover {
+    transform: translateY(-5px);
+}
+
+.trainer-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.trainer-item h3 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    margin: 10px 0;
+}
+
+.trainer-item .specialty {
+    color: rgb(213, 248, 109);
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.trainer-item .experience,
+.trainer-item .certification {
+    color: burlywood;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .product-grid,
+    .trainer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid,
+    .trainer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Contact Page Styles */
+
+.contact-container {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.contact-container h2 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contact-info,
+.contact-form {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.contact-info h3,
+.contact-form h3 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.location-details {
+    color: burlywood;
+    margin-bottom: 30px;
+}
+
+.location-details p {
+    margin: 10px 0;
+}
+
+.location-details ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.location-details li {
+    margin: 5px 0;
+}
+
+.map-container {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgb(116, 116, 230);
+    border-radius: 9px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: whitesmoke;
+    font-family: "Audiowide", sans-serif;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: burlywood;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Payment Button Styles */
+
+.payment-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    margin-right: 10px;
+}
+
+.payment-btn:hover {
+    background-color: #45a049;
+}
+
+.payment-btn i {
+    margin-right: 5px;
+}
+
+
+/* Payment Page Styles */
+
+.payment-container {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.payment-container h2 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.payment-option {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.payment-option:hover {
+    transform: translateY(-5px);
+}
+
+.payment-option h3 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    margin-bottom: 15px;
+}
+
+.payment-option .price {
+    color: #4CAF50;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.payment-option .features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    color: burlywood;
+}
+
+.payment-option .features li {
+    margin: 10px 0;
+}
+
+.payment-option .payment-select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.payment-option .payment-select:hover {
+    background-color: #45a049;
+}
+
+.payment-form {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.payment-form h3 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .payment-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Social Media Icons */
+
+.social-links {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.social-links h3 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    color: whitesmoke;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #4CAF50;
+}
+
+.social-icon i {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon:hover i {
+    background-color: rgba(76, 175, 80, 0.2);
+}
+
+
+/* Cart Styles */
+
+.cart-container {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.cart-container h2 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.cart-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.cart-items {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cart-item-details h4 {
+    color: whitesmoke;
+    margin: 0 0 5px 0;
+}
+
+.cart-item-details p {
+    color: burlywood;
+    margin: 0;
+}
+
+.cart-item-price {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: whitesmoke;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quantity-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cart-summary {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    height: fit-content;
+}
+
+.cart-summary h3 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    color: burlywood;
+}
+
+.summary-item.total {
+    color: #4CAF50;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+/* Modal Styles */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: rgb(28, 26, 2);
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-content h3 {
+    font-family: "Audiowide", sans-serif;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.payment-methods {
+    margin-bottom: 20px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    color: whitesmoke;
+}
+
+.payment-method input[type="radio"] {
+    margin-right: 10px;
+}
+
+.payment-method label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.payment-method i {
+    font-size: 20px;
+}
+
+.payment-details {
+    margin: 20px 0;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .cart-content {
+        grid-template-columns: 1fr;
+    }
+    .cart-item {
+        grid-template-columns: 80px 1fr;
+        grid-template-rows: auto auto;
+    }
+    .cart-item img {
+        width: 80px;
+        height: 80px;
+    }
+    .cart-item-price,
+    .cart-item-quantity {
+        grid-column: 2;
+    }
+}
+
+
+/* Certificates Page Styles */
+
+.certificates-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.certificates-container h2 {
+    text-align: center;
+    color: whitesmoke;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.certificate-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.certificate-item:hover {
+    transform: translateY(-5px);
+}
+
+.certificate-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.certificate-item h3 {
+    color: whitesmoke;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.certificate-item p {
+    color: burlywood;
+    margin-bottom: 0.5rem;
+}
+
+.certificate-item .date {
+    color: #4CAF50;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.achievements-section {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.achievements-section h3 {
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.achievements-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.achievements-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: burlywood;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.achievements-list i {
+    color: #4CAF50;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .certificate-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    .achievements-list {
+        grid-template-columns: 1fr;
+    }
+}
