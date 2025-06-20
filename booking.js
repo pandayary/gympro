@@ -1,121 +1,99 @@
-// API URL
-const API_URL = 'http://localhost:5000/api';
+const express = require('express');
+const router = express.Router();
+const Booking = require('../models/Booking');
+const Season = require('../models/Season');
 
-// Current selected season
-let selectedSeason = null;
-
-// Load seasons when page loads
-document.addEventListener('DOMContentLoaded', loadSeasons);
-
-// Function to load all seasons
-async function loadSeasons() {
+// Get all bookings
+router.get('/', async(req, res) => {
     try {
-        const response = await fetch(`${API_URL}/seasons`);
-        const seasons = await response.json();
-        displaySeasons(seasons);
-    } catch (error) {
-        console.error('Error loading seasons:', error);
-        alert('Failed to load seasons. Please try again later.');
+        const bookings = await Booking.find().populate('seasonId');
+        res.json(bookings);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
     }
-}
+});
 
-// Function to display seasons in the UI
-function displaySeasons(seasons) {
-    const seasonsList = document.getElementById('seasonsList');
-    seasonsList.innerHTML = seasons.map(season => `
-        <div class="season-card">
-            <h3>${season.name}</h3>
-            <div class="season-info">
-                <p><strong>Trainer:</strong> ${season.trainer}</p>
-                <p><strong>Start Date:</strong> ${new Date(season.startDate).toLocaleDateString()}</p>
-                <p><strong>End Date:</strong> ${new Date(season.endDate).toLocaleDateString()}</p>
-                <p><strong>Price:</strong> ₹${season.price}</p>
-                <p><strong>Available Slots:</strong> ${season.availableSlots}/${season.capacity}</p>
-                <p><strong>Description:</strong> ${season.description}</p>
-            </div>
-            <button 
-                class="book-btn" 
-                onclick="openBookingModal('${season._id}')"
-                ${season.availableSlots <= 0 ? 'disabled' : ''}
-            >
-                ${season.availableSlots <= 0 ? 'No Slots Available' : 'Book Now'}
-            </button>
-        </div>
-    `).join('');
-}
-
-// Function to open booking modal
-function openBookingModal(seasonId) {
-    selectedSeason = seasonId;
-    const modal = document.getElementById('bookingModal');
-    const bookingDetails = document.getElementById('bookingDetails');
-
-    // Get season details
-    fetch(`${API_URL}/seasons/${seasonId}`)
-        .then(response => response.json())
-        .then(season => {
-            bookingDetails.innerHTML = `
-                <div class="season-info">
-                    <p><strong>Season:</strong> ${season.name}</p>
-                    <p><strong>Price:</strong> ₹${season.price}</p>
-                    <p><strong>Trainer:</strong> ${season.trainer}</p>
-                </div>
-            `;
-            modal.style.display = 'flex';
-        })
-        .catch(error => {
-            console.error('Error loading season details:', error);
-            alert('Failed to load season details. Please try again.');
-        });
-}
-
-// Function to close booking modal
-function closeBookingModal() {
-    document.getElementById('bookingModal').style.display = 'none';
-    document.getElementById('userId').value = '';
-    selectedSeason = null;
-}
-
-// Function to confirm booking
-async function confirmBooking() {
-    const userId = document.getElementById('userId').value;
-
-    if (!userId) {
-        alert('Please enter your User ID');
-        return;
-    }
-
+// Get user's bookings
+router.get('/user/:userId', async(req, res) => {
     try {
-        const response = await fetch(`${API_URL}/bookings`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                userId: userId,
-                seasonId: selectedSeason
-            })
-        });
+        const bookings = await Booking.find({ userId: req.params.userId }).populate('seasonId');
+        res.json(bookings);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
 
-        const data = await response.json();
-
-        if (response.ok) {
-            alert('Booking successful! Please proceed to payment.');
-            closeBookingModal();
-            loadSeasons(); // Refresh the seasons list
-        } else {
-            alert(data.message || 'Failed to book season. Please try again.');
+// Create new booking
+router.post('/', async(req, res) => {
+    try {
+        const season = await Season.findById(req.body.seasonId);
+        if (!season) {
+            return res.status(404).json({ message: 'Season not found' });
         }
-    } catch (error) {
-        console.error('Error booking season:', error);
-        alert('Failed to book season. Please try again later.');
-    }
-}
 
-// Close modal when clicking outside
-window.onclick = function(event) {
-    const modal = document.getElementById('bookingModal');
-    if (event.target === modal) {
-        closeBookingModal();
+        if (season.availableSlots <= 0) {
+            return res.status(400).json({ message: 'No available slots for this season' });
+        }
+
+        const booking = new Booking({
+            userId: req.body.userId,
+            seasonId: req.body.seasonId,
+            amount: season.price
+        });
+
+        // Update available slots
+        season.availableSlots -= 1;
+        await season.save();
+
+        const newBooking = await booking.save();
+        res.status(201).json(newBooking);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
     }
-}
+});
+
+// Update booking status
+router.patch('/:id', async(req, res) => {
+    try {
+        const booking = await Booking.findById(req.params.id);
+        if (!booking) {
+            return res.status(404).json({ message: 'Booking not found' });
+        }
+
+        if (req.body.status) {
+            booking.status = req.body.status;
+        }
+        if (req.body.paymentStatus) {
+            booking.paymentStatus = req.body.paymentStatus;
+        }
+
+        const updatedBooking = await booking.save();
+        res.json(updatedBooking);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
+
+// Cancel booking
+router.delete('/:id', async(req, res) => {
+    try {
+        const booking = await Booking.findById(req.params.id);
+        if (!booking) {
+            return res.status(404).json({ message: 'Booking not found' });
+        }
+
+        // Update available slots in season
+        const season = await Season.findById(booking.seasonId);
+        if (season) {
+            season.availableSlots += 1;
+            await season.save();
+        }
+
+        await booking.remove();
+        res.json({ message: 'Booking cancelled' });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+module.exports = router;
